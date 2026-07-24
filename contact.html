@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Ariko Yahya Setyawan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span> Ariko Yahya Setyawan</a>
+    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="experience.html">Experience</a>
+      <a href="trainings.html">Trainings</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom: 40px;">
+  <div class="wrap">
+    <p class="eyebrow">// get in touch</p>
+    <h1>Let's talk about data, models, or the next thing to build.</h1>
+  </div>
+</header>
+
+<section>
+  <div class="wrap contact-grid">
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="label">Email</span>
+        <a class="value" href="mailto:arikosetyawan00@gmail.com">arikosetyawan00@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">GitHub</span>
+        <a class="value" href="https://github.com/arikosetyawan00" target="_blank" rel="noopener">github.com/arikosetyawan00</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">LinkedIn</span>
+        <a class="value" href="https://www.linkedin.com/in/ariko-yahya-setyawan" target="_blank" rel="noopener">linkedin.com/in/ariko-yahya-setyawan</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Location</span>
+        <span class="value">Malang, East Java, Indonesia</span>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <form id="contact-form">
+        <div class="field">
+          <label for="name">Nama</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim pesan →</button>
+        <p style="font-size:13px; color:var(--ink-soft); margin-top:10px;">
+          Tombol ini akan membuka aplikasi email kamu dengan pesan yang sudah terisi otomatis, terkirim langsung ke arikosetyawan00@gmail.com.
+        </p>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = encodeURIComponent(document.getElementById('name').value);
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const subject = encodeURIComponent('Pesan dari portofolio — ' + document.getElementById('name').value);
+        const body = encodeURIComponent(message + '\n\n— ' + document.getElementById('name').value + ' (' + email + ')');
+        window.location.href = 'mailto:arikosetyawan00@gmail.com?subject=' + subject + '&body=' + body;
+      });
+    </script>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ariko Yahya Setyawan</span>
+    <span>Malang, East Java, Indonesia</span>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
